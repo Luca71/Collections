@@ -1,0 +1,1 @@
+clang.exe -c -o src\linkedlist.o src\linkedlist.c

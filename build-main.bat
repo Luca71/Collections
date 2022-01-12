@@ -1,0 +1,1 @@
+clang.exe -c -o src\main.o src\main.c

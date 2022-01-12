@@ -1,0 +1,1 @@
+clang.exe -c -o src\dynarray.o src\dynarray.c

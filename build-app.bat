@@ -1,0 +1,1 @@
+clang.exe -o bin\app.exe src\*.o
