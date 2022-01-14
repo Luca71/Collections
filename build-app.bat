@@ -1,1 +1,1 @@
-clang.exe -o bin\app.exe src\*.o
+clang.exe -o bin\app.exe src\*.o && bin\app.exe

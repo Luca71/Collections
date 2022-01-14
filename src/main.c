@@ -1,11 +1,13 @@
 #include "dynarray.h"
 #include "linkedlist.h"
+#include "doubly_linkedlist.h"
 
 #define mylist_append(string_item_t, char) list_append((list_node_t **)string_item_t, (list_node_t *)string_item_new(char))
+#define mydoub_list_append(string_item_t, char) doubly_append((doub_list_node_t **)string_item_t, (doub_list_node_t *)doub_string_item_new(char))
 
 int main()
 {
-    
+/*    
     // dynarray test
     dynarray_t array;
     dynarray_init_type(&array, int);
@@ -80,9 +82,53 @@ int main()
         printf("%s\n", string_item->string);
         string_item = (struct string_item *)string_item->node.next;
     }
+ */
 
+    // test doubly_linked_list
+    doub_string_item_t *my_doub_list = NULL;
 
+    mydoub_list_append(&my_doub_list, "Primo");
+    mydoub_list_append(&my_doub_list, "Secondo");
+    mydoub_list_append(&my_doub_list, "Terzo");
+    mydoub_list_append(&my_doub_list, "Quarto");
+    mydoub_list_append(&my_doub_list, "Quinto");
 
+    // print test result
+    printf("\n---  Doubly Linked List Test  ---\n\n");
+    //printf("\n");
+    doub_string_item_t *current_item = my_doub_list;
+    while (current_item)
+    {
+        printf("%s\n", current_item->string_data);
+        current_item = (doub_string_item_t*) current_item->node.next;
+    }
+
+    printf("\nRimuovo il secondo item della lista. Lista aggiornata:\n\n");
+    doubly_remove(&my_doub_list, "Secondo");
+    current_item = my_doub_list;
+    while (current_item)
+    {
+        printf("%s\n", current_item->string_data);
+        current_item = (doub_string_item_t*) current_item->node.next;
+    }
+
+    printf("\nRimuovo elemento dopo il Terzo (Quarto). Lista aggiornata:\n\n");
+    doubly_remove_after_item(&my_doub_list, "Terzo");
+    current_item = my_doub_list;
+    while (current_item)
+    {
+        printf("%s\n", current_item->string_data);
+        current_item = (doub_string_item_t*) current_item->node.next;
+    }
+
+    printf("\nRimuovo elemento prima del Quinto (Terzo). Lista aggiornata:\n\n");
+    doubly_remove_before_item(&my_doub_list, "Quinto");
+    current_item = my_doub_list;
+    while (current_item)
+    {
+        printf("%s\n", current_item->string_data);
+        current_item = (doub_string_item_t*) current_item->node.next;
+    }
 
 
     return 0;

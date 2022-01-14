@@ -1,0 +1,1 @@
+clang.exe -c -o src\doubly_linkedlist.o src\doubly_linkedlist.c

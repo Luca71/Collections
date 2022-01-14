@@ -65,7 +65,6 @@ void string_remove(string_item_t **head, const char *key)
     if(temp != NULL && temp->string == key)
     {
         *head = (struct string_item *)temp->node.next;
-        free(temp);
         return;
     }
 
@@ -85,6 +84,8 @@ void string_remove(string_item_t **head, const char *key)
 
     // refactoring nodes link
     prev->node.next = temp->node.next;
+
+    free(temp);
 }
 
 
