@@ -1,11 +1,12 @@
 #include "dynarray.h"
 #include "linkedlist.h"
 #include "doubly_linkedlist.h"
+#include "sets.h"
 
 #define mylist_append(string_item_t, char) list_append((list_node_t **)string_item_t, (list_node_t *)string_item_new(char))
 #define mydoub_list_append(string_item_t, char) doubly_append((doub_list_node_t **)string_item_t, (doub_list_node_t *)doub_string_item_new(char))
 
-int main()
+int main(void)
 {
 /*    
     // dynarray test
@@ -82,7 +83,6 @@ int main()
         printf("%s\n", string_item->string);
         string_item = (struct string_item *)string_item->node.next;
     }
- */
 
     // test doubly_linked_list
     doub_string_item_t *my_doub_list = NULL;
@@ -95,7 +95,6 @@ int main()
 
     // print test result
     printf("\n---  Doubly Linked List Test  ---\n\n");
-    //printf("\n");
     doub_string_item_t *current_item = my_doub_list;
     while (current_item)
     {
@@ -129,7 +128,46 @@ int main()
         printf("%s\n", current_item->string_data);
         current_item = (doub_string_item_t*) current_item->node.next;
     }
+ */
+
+    /*** Test sets ***/
+    set_table_t *my_table = set_table_new(5);
+    set_insert(my_table, "Prato", 5);
+    set_insert(my_table, "Casa", 4);
+    set_insert(my_table, "Albero", 6);
+
+    // insert a duplicated key
+    printf("Trying to insert \'Albero\' again\n");
+    set_insert(my_table, "Albero", 6);
+
+    set_insert(my_table, "Stelle", 6);
+    set_insert(my_table, "A", 1);
 
 
+    // Print the created list
+    printf("\n---  The created set  ---\n");
+    printTable(my_table);
+
+    // Search for a key
+    printf("Search for \'Albero\'\n");
+    set_search(my_table, "Albero", 6);
+    printf("Search for \'Casa\'\n");
+    set_search(my_table, "Casa", 4);
+    printf("Search for \'Prato\'\n");
+    set_search(my_table, "Prato", 5);
+    printf("Search for \'Stalle\'\n");
+    set_search(my_table, "Stalle", 6);       // is not in set case
+    printf("Search for \'A\'\n");
+    set_search(my_table, "A", 1);
+
+    printf("Remove \'A\'\n");                // remove a key from set
+    set_remove(my_table, "A", 1);
+
+    printf("\nLa nuova lista:\n");
+    printTable(my_table);
+
+    printf("Remove \'Airplane\'\n");                // remove key not in set
+    set_remove(my_table, "Airplane", 8);
+    
     return 0;
 }

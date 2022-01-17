@@ -1,0 +1,1 @@
+clang.exe -c -o src\sets.o src\sets.c
