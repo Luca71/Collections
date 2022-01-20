@@ -1,0 +1,1 @@
+clang.exe -o tests.exe -I.\tests\include -Iinclude .\tests\src\main.c .\src\dynarray.c && tests.exe

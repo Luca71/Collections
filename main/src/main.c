@@ -8,7 +8,7 @@
 
 int main(void)
 {
-/*    
+
     // dynarray test
     dynarray_t array;
     dynarray_init_type(&array, int);
@@ -58,6 +58,7 @@ int main(void)
     dynarray_clear(&array);
     printf("\n");
 
+/* 
     // linked list test
     string_item_t *my_linked_list = NULL;
 
@@ -128,21 +129,18 @@ int main(void)
         printf("%s\n", current_item->string_data);
         current_item = (doub_string_item_t*) current_item->node.next;
     }
- */
 
-    /*** Test sets ***/
+    // Test sets
     set_table_t *my_table = set_table_new(5);
     set_insert(my_table, "Prato", 5);
     set_insert(my_table, "Casa", 4);
     set_insert(my_table, "Albero", 6);
-
     // insert a duplicated key
     printf("Trying to insert \'Albero\' again\n");
     set_insert(my_table, "Albero", 6);
 
     set_insert(my_table, "Stelle", 6);
     set_insert(my_table, "A", 1);
-
 
     // Print the created list
     printf("\n---  The created set  ---\n");
@@ -168,6 +166,8 @@ int main(void)
 
     printf("Remove \'Airplane\'\n");                // remove key not in set
     set_remove(my_table, "Airplane", 8);
+     */
     
     return 0;
+
 }
