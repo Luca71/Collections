@@ -1,1 +1,1 @@
-clang.exe -c -o src\main.o src\main.c
+clang.exe -c -o obj\main.o -Iinclude main\src\main.c

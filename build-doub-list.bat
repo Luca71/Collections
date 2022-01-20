@@ -1,1 +1,1 @@
-clang.exe -c -o src\doubly_linkedlist.o src\doubly_linkedlist.c
+clang.exe -c -o obj\doubly_linkedlist.o -Iinclude src\doubly_linkedlist.c

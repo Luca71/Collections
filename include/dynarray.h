@@ -15,11 +15,56 @@ typedef struct dynarray
     uint8_t *tmp_data;
 } dynarray_t;
 
+/*
+* Inizialization of the array
+*
+* @param array My new array
+* @param size_of_element Size for the array elements
+*/
 int dynarray_init(dynarray_t *array, const size_t size_of_element);
+
+/*
+* Clear the array and his memory
+*
+* @param array The array to clear
+*/
 void dynarray_clear(dynarray_t *array);
+
+/*
+* Append new value into the array
+*
+* @param array My array
+* @param value The new value to append
+*/
 int dynarray_append(dynarray_t *array, const void *value);
 
+/*
+* Get the length of the given array
+*
+* @param array My Array
+*/
 size_t dynarray_len(const dynarray_t *array);
+
+/*
+* Get the capacity of the given array (Number of elements)
+*
+* @param array My array
+*/
 size_t dynarray_capacity(const dynarray_t *array);
+
+/*
+* Get array value at specific index
+*
+* @param array My array
+* @param index The index of the value in the array
+* @param value The returned value
+*/
 int dynaray_get(const dynarray_t *array, const size_t index, void *value);
+
+/*
+* Remove an item from the array
+*
+* @param array My array
+* @param index The index of the item to remove
+*/
 int dynarray_remove(dynarray_t *array, const size_t index);

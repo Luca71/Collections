@@ -1,5 +1,6 @@
 #include "dynarray.h"
 
+
 int dynarray_init(dynarray_t *array, const size_t size_of_element)
 {
     array->number_of_elements = 0;

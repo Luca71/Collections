@@ -1,1 +1,1 @@
-clang.exe -c -o src\dynarray.o src\dynarray.c
+clang.exe -c -o obj\dynarray.o -Iinclude src\dynarray.c 

@@ -1,1 +1,1 @@
-clang.exe -c -o src\sets.o src\sets.c
+clang.exe -c -o obj\sets.o -Iinclude src\sets.c

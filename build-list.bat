@@ -1,1 +1,1 @@
-clang.exe -c -o src\linkedlist.o src\linkedlist.c
+clang.exe -c -o obj\linkedlist.o -Iinclude src\linkedlist.c
